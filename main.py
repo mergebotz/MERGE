@@ -61,7 +61,7 @@ HELP_BUTTONS = InlineKeyboardMarkup(
 
 ABOUT_BUTTONS = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("📮 Feedback DeV", url="https://t.me/Animesh941")],
+                [InlineKeyboardButton("📮 Feedback DeV", url="https://t.me/DKBOTZHELP")],
                 [InlineKeyboardButton("🏡 Home", callback_data="home"),
                  InlineKeyboardButton("⛔ Close", callback_data="close")]
             ]
@@ -133,7 +133,7 @@ async def videos_handler(bot: Client, m: Message):
         return
     media = m.video or m.document
     if media.file_name.rsplit(".", 1)[-1].lower() not in ["mp4", "mkv", "webm"]:
-        await m.reply_text("**Sorry dude, I don't support such video formats!**\n**Send Only MP4, MKV or WEBM.**\n\n**Thank You For Using me - @AVBotz ❤️**", quote=True)
+        await m.reply_text("**Sorry dude, I don't support such video formats!**\n**Send Only MP4, MKV or WEBM.**\n\n**Thank You For Using me - @DKBOTZ ❤️**", quote=True)
         return
     if QueueDB.get(m.from_user.id, None) is None:
         FormtDB.update({m.from_user.id: media.file_name.rsplit(".", 1)[-1].lower()})
@@ -390,7 +390,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
                     )
                 )
             except Exception as downloadErr:
-                print(f"**😐 Failed to Download the Given File!**\n**Error: {downloadErr}**\n\n**Contact My Support Group - @AVBotz_Support**")
+                print(f"**😐 Failed to Download the Given File!**\n**Error: {downloadErr}**\n\n**Contact My Support Group - @DKBOTZ**")
                 QueueDB.get(cb.from_user.id).remove(i.message_id)
                 await cb.message.edit("**File Skipped!**")
                 await asyncio.sleep(3)
@@ -446,7 +446,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
                 [
                     [InlineKeyboardButton("📂 Rename File", callback_data="renameFile_Yes"), 
                      InlineKeyboardButton("😐 Use Default", callback_data="renameFile_No")],
-                    [InlineKeyboardButton("💬 Join My Support Group 👥", url="https://t.me/AVBotz_Support")]
+                    [InlineKeyboardButton("💬 Join My Support Group 👥", url="https://t.me/DKBOTZ")]
                 ]
             )
         )
@@ -505,7 +505,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
                 user = await bot.get_chat_member(chat_id=(int(Config.UPDATES_CHANNEL) if Config.UPDATES_CHANNEL.startswith("-100") else Config.UPDATES_CHANNEL), user_id=cb.message.chat.id)
                 if user.status == "kicked":
                     await cb.message.edit(
-                        text="**Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/AVBotz_Support).**",
+                        text="**Sorry Sir, You are Banned to use me. Contact my [Support Group](https://t.me/DKBOTZ).**",
                         parse_mode="markdown",
                         disable_web_page_preview=True
                     )
@@ -528,7 +528,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
                 return
             except Exception:
                 await cb.message.edit(
-                    text="**Something went Wrong Dude. Contact my [Support Group](https://t.me/AVBotz_Support).**",
+                    text="**Something went Wrong Dude. Contact my [Support Group](https://t.me/DKBOTZ).**",
                     parse_mode="markdown",
                     disable_web_page_preview=True
                 )
@@ -588,11 +588,11 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
             await cb.answer("**Sorry, Your Queue is Empty!**", show_alert=True)
     elif "renamefile" in cb.data:
         await cb.message.edit(
-            text="**Rename Your Files Using Rename Bots and try sending again, Only mp4, mkv, webm formats are accepted!\n\n👀 Suggested : @RenamerAVBot | .mkv Format**", 
+            text="**Rename Your Files Using Rename Bots and try sending again, Only mp4, mkv, webm formats are accepted!\n\n👀 Suggested : @DKBOTZ | .mkv Format**", 
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("👀 Other Botz", url="https://t.me/AVBotz/5"),
+                        InlineKeyboardButton("👀 Other Botz", url="https://t.me/DKBOTZ/5"),
                         InlineKeyboardButton("😐 Close", callback_data="close")
                     ]
                 ] 
@@ -618,7 +618,7 @@ async def callback_handlers(bot: Client, cb: CallbackQuery):
         if (QueueDB.get(cb.from_user.id, None) is None) or (QueueDB.get(cb.from_user.id) == []):
             await cb.answer("Sorry, Your Queue is Empty!", show_alert=True)
             return
-        merged_vid_path = f"{Config.DOWN_PATH}/{str(cb.from_user.id)}/[@AniMesH941]_Merged.{FormtDB.get(cb.from_user.id).lower()}"
+        merged_vid_path = f"{Config.DOWN_PATH}/{str(cb.from_user.id)}/[@DKBOTZ]_Merged.{FormtDB.get(cb.from_user.id).lower()}"
         if cb.data.split("_", 1)[-1] == "Yes":
             await cb.message.edit("**Okay, Send me the new file name!**")
             try:
