@@ -7,7 +7,7 @@ class Config(object):
     API_ID = os.environ.get("API_ID", '7651392')
     API_HASH = os.environ.get("API_HASH", 'db62aa57ef8162bb4c95d0cf81e1c09b')
     BOT_TOKEN = os.environ.get("BOT_TOKEN", '1907000957:AAFT2UzNd7i8gNZYnpsUjQX1PG_edWgs738')
-    SESSION_NAME = os.environ.get("SESSION_NAME", "Video-Merge-Bot")
+    SESSION_NAME = os.environ.get("SESSION_NAME", "DKMERGEBOT")
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", '-1001287353197')
     LOG_CHANNEL = os.environ.get("LOG_CHANNEL", '-1001514043208')
     DOWN_PATH = os.environ.get("DOWN_PATH", "./downloads")
