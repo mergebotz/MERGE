@@ -36,7 +36,7 @@ Check Below Buttons for more..!
 ● Library : [Pyrogram](https://docs.pyrogram.org)
 ● Server : [Heroku](https://heroku.com)
 
-©️ Made By @AVBotz ❤️**
+©️ Made By @DKBOTZ ❤️**
 """
 
     HELP_TEXT = """**Hello {}, It's too easy to use me..**
