@@ -5,7 +5,7 @@ Pillow
 aiohttp
 motor
 dnspython
-https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
+ffmpeg
 aiofiles
 psutil
 pyromod
